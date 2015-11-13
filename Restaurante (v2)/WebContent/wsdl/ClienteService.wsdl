@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.rest" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.rest" xmlns:intf="http://services.rest" xmlns:tns1="http://model.rest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.rest" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <import namespace="http://model.rest"/>
+   <element name="getInstance">
+    <complexType/>
+   </element>
+   <element name="getInstanceResponse">
+    <complexType>
+     <sequence>
+      <element name="getInstanceReturn" type="impl:ClienteService"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="ClienteService">
+    <sequence>
+     <element name="clienteAll" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+   <element name="createCliente">
+    <complexType>
+     <sequence>
+      <element name="cliente" type="tns1:Clientes"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createClienteResponse">
+    <complexType/>
+   </element>
+   <element name="updateCliente">
+    <complexType>
+     <sequence>
+      <element name="cliente" type="tns1:Clientes"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateClienteResponse">
+    <complexType/>
+   </element>
+   <element name="deleteCliente">
+    <complexType>
+     <sequence>
+      <element name="cliente" type="tns1:Clientes"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteClienteResponse">
+    <complexType/>
+   </element>
+   <element name="getClienteAll">
+    <complexType/>
+   </element>
+   <element name="getClienteAllResponse">
+    <complexType>
+     <sequence>
+      <element name="getClienteAllReturn" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCliente">
+    <complexType>
+     <sequence>
+      <element name="email" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getClienteResponse">
+    <complexType>
+     <sequence>
+      <element name="getClienteReturn" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://services.rest"/>
+   <import namespace="http://model.rest"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.rest" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <import namespace="http://services.rest"/>
+   <complexType name="Clientes">
+    <sequence>
+     <element name="apeCliente" nillable="true" type="xsd:string"/>
+     <element name="cedCliente" nillable="true" type="xsd:string"/>
+     <element name="emailCliente" nillable="true" type="xsd:string"/>
+     <element name="estatus" nillable="true" type="xsd:string"/>
+     <element name="idCliente" nillable="true" type="xsd:long"/>
+     <element name="nomCliente" nillable="true" type="xsd:string"/>
+     <element name="passCliente" nillable="true" type="xsd:string"/>
+     <element name="telCliente" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getInstanceRequest">
+
+      <wsdl:part element="impl:getInstance" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createClienteResponse">
+
+      <wsdl:part element="impl:createClienteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateClienteRequest">
+
+      <wsdl:part element="impl:updateCliente" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createClienteRequest">
+
+      <wsdl:part element="impl:createCliente" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteClienteRequest">
+
+      <wsdl:part element="impl:deleteCliente" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getClienteRequest">
+
+      <wsdl:part element="impl:getCliente" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInstanceResponse">
+
+      <wsdl:part element="impl:getInstanceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateClienteResponse">
+
+      <wsdl:part element="impl:updateClienteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteClienteResponse">
+
+      <wsdl:part element="impl:deleteClienteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getClienteAllRequest">
+
+      <wsdl:part element="impl:getClienteAll" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getClienteResponse">
+
+      <wsdl:part element="impl:getClienteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getClienteAllResponse">
+
+      <wsdl:part element="impl:getClienteAllResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ClienteService">
+
+      <wsdl:operation name="getInstance">
+
+         <wsdl:input message="impl:getInstanceRequest" name="getInstanceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getInstanceResponse" name="getInstanceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createCliente">
+
+         <wsdl:input message="impl:createClienteRequest" name="createClienteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createClienteResponse" name="createClienteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateCliente">
+
+         <wsdl:input message="impl:updateClienteRequest" name="updateClienteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateClienteResponse" name="updateClienteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteCliente">
+
+         <wsdl:input message="impl:deleteClienteRequest" name="deleteClienteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteClienteResponse" name="deleteClienteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getClienteAll">
+
+         <wsdl:input message="impl:getClienteAllRequest" name="getClienteAllRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getClienteAllResponse" name="getClienteAllResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCliente">
+
+         <wsdl:input message="impl:getClienteRequest" name="getClienteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getClienteResponse" name="getClienteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ClienteServiceSoapBinding" type="impl:ClienteService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getInstance">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getInstanceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getInstanceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createCliente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createClienteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createClienteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateCliente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateClienteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateClienteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteCliente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteClienteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteClienteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getClienteAll">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getClienteAllRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getClienteAllResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCliente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getClienteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getClienteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ClienteServiceService">
+
+      <wsdl:port binding="impl:ClienteServiceSoapBinding" name="ClienteService">
+
+         <wsdlsoap:address location="http://localhost:8080/Restaurante/services/ClienteService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

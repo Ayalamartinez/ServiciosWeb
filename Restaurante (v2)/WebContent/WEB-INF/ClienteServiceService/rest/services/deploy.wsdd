@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ClienteServiceService WSDL service -->
+
+  <service name="ClienteService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services.rest"/>
+      <parameter name="wsdlServiceElement" value="ClienteServiceService"/>
+      <parameter name="schemaQualified" value="http://model.rest,http://services.rest,http://xml.apache.org/xml-soap"/>
+      <parameter name="wsdlServicePort" value="ClienteService"/>
+      <parameter name="className" value="rest.services.ClienteService"/>
+      <parameter name="wsdlPortType" value="ClienteService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://services.rest" xmlns:retNS="http://services.rest" xmlns:rtns="http://services.rest" name="getInstance" qname="operNS:getInstance" returnQName="retNS:getInstanceReturn" returnType="rtns:ClienteService" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://services.rest" name="createCliente" qname="operNS:createCliente" soapAction="">
+        <parameter xmlns:pns="http://services.rest" xmlns:tns="http://model.rest" qname="pns:cliente" type="tns:Clientes"/>
+      </operation>
+      <operation xmlns:operNS="http://services.rest" name="updateCliente" qname="operNS:updateCliente" soapAction="">
+        <parameter xmlns:pns="http://services.rest" xmlns:tns="http://model.rest" qname="pns:cliente" type="tns:Clientes"/>
+      </operation>
+      <operation xmlns:operNS="http://services.rest" name="deleteCliente" qname="operNS:deleteCliente" soapAction="">
+        <parameter xmlns:pns="http://services.rest" xmlns:tns="http://model.rest" qname="pns:cliente" type="tns:Clientes"/>
+      </operation>
+      <operation xmlns:operNS="http://services.rest" xmlns:retNS="http://services.rest" xmlns:rtns="http://services.rest" xmlns:tns="http://services.rest" name="getClienteAll" qname="operNS:getClienteAll" returnQName="retNS:getClienteAllReturn" returnType="rtns:ArrayOf_xsd_anyType" returnItemQName="tns:item" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://services.rest" xmlns:retNS="http://services.rest" xmlns:rtns="http://services.rest" xmlns:tns="http://services.rest" name="getCliente" qname="operNS:getCliente" returnQName="retNS:getClienteReturn" returnType="rtns:ArrayOf_xsd_anyType" returnItemQName="tns:item" soapAction="">
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" xmlns:pns="http://services.rest" qname="pns:email" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="updateCliente getClienteAll deleteCliente getInstance createCliente getCliente"/>
+
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;getClienteAllResponse" type="java:rest.services.GetClienteAllResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:ClienteService" type="java:rest.services.ClienteService_Type" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;updateClienteResponse" type="java:rest.services.UpdateClienteResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;deleteClienteResponse" type="java:rest.services.DeleteClienteResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;getCliente" type="java:rest.services.GetCliente" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;getInstanceResponse" type="java:rest.services.GetInstanceResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;deleteCliente" type="java:rest.services.DeleteCliente" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;getInstance" type="java:rest.services.GetInstance" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.rest" qname="ns:Clientes" type="java:rest.model.Clientes" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;updateCliente" type="java:rest.services.UpdateCliente" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;getClienteResponse" type="java:rest.services.GetClienteResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;createClienteResponse" type="java:rest.services.CreateClienteResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://services.rest" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;getClienteAll" type="java:rest.services.GetClienteAll" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://services.rest" qname="ns:&gt;createCliente" type="java:rest.services.CreateCliente" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

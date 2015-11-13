@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Servicios Web - Restaurante</title>
+</head>
+<style type="text/css">
+body {
+	font-family:Arial;
+	color:blue;
+}
+
+</style>
+<body>
+
+	<h3> Listado de Servicios Web - Restaurante</h3>
+	
+	<h4>Servicios de Clientes</h4><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crear cliente (POST- Restaurante/rest/createCliente)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener un cliente (GET - estaurante/rest/getCliente/{emailCliente})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener todos los clientes (GET - Restaurante/rest/getClientesAll)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Actualizar un cliente (POST - Restaurante/rest/updateCliente/{emailCliente})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eliminar un cliente (DELETE - Restaurante/rest/deleteCliente/{emailCliente})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Login de cliente (GET - Restaurante/rest/login)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cambiar password de cliente (POST - Restaurante/rest/cambiarPassword)<br>
+
+	<h4>Servicios de Ingredientes</h4><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crear ingrediente (POST - Restaurante/rest/ingrediente/createIngrediente)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener un ingrediente (GET - Restaurante/rest/ingrediente/getIngrediente/{idIngrediente})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener todos los ingredientes (GET - Restaurante/rest/ingrediente/getIngredientesAll)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Actualizar un ingrediente (POST - Restaurante/rest/ingrediente/updateIngrediente/{idIngrediente})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eliminar un ingrediente (DELETE - Restaurante/rest/ingrediente/deleteIngrediente/{idIngrediente})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descontar del stock de un ingrediente (POST - Restaurante/rest/ingrediente/descontarIngrediente/{idIngrediente}/{cant})<br>
+	
+	<h4>Servicios de Menús</h4><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crear menú (POST - Restaurante/rest/menu/createMenu)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener un menú (GET - Restaurante/rest/menu/getMenu/{idMenu})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener todos los menúes (GET - Restaurante/rest/menu/getMenusAll)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Agregar un plato en un menú (POST - Restaurante/rest/menu/addPlatoMenu/{idMenu}/{idPlato})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eliminar un plato en un menú (POST - Restaurante/rest/menu/deletePlatoMenu/{idMenu}/{idPlato})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eliminar un menú (DELETE - Restaurante/rest/menu/deleteMenu/{idMenu})<br>
+	
+	<h4>Servicios de Pedidos</h4><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crear pedido (POST - Restaurante/rest/pedido/createPedido)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener un pedido (GET - Restaurante/rest/pedido/getPedido/{idPedido})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener todos los pedidos (GET - Restaurante/rest/pedido/getPedidosAll)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Agregar detalle de un pedido (POST - Restaurante/rest/pedido/addDetallePedido/{idPedido})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eliminar detalle de un pedido (DELETE - Restaurante/rest/pedido/deleteDetallePedido/{idPedido}/{idDetalle})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eliminar un pedido (DELETE - Restaurante/rest/pedido/deletePedido/{idPedido})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Actualizar el estatus de un pedido (POST - Restaurante/rest/pedido/updateEstatusPedido/{idPedido}/{estatus})<br>
+	
+	<h4>Servicios de Platos</h4><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crear plato (POST - Restaurante/rest/plato/createPlato)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener un plato (GET - Restaurante/rest/plato/getPlato/{idPlato})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener todos los platos (GET - Restaurante/rest/plato/getPlatosAll)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Actualizar un plato (POST - Restaurante/rest/plato/updatePlato/{idPlato})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Agregar un ingrediente a un plato (POST - Restaurante/rest/plato/addIngredientePlato/{idIngrediente}/{idPlato})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eliminar un ingrediente a un plato (DELETE - Restaurante/rest/plato/deleteIngredientePlato/{idPlato}/{idIngrediente})<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eliminar un plato (DELETE - Restaurante/rest/plato/deletePlato/{idPlato})<br>
+	
+	<h4>Servicios de Restaurantes</h4><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crear restaurante (POST - Restaurante/rest/restaurante/createRestaurante)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obtener un restaurante (GET - Restaurante/rest/restaurante/getRestaurante/{idRestaurante})<br>
+	
+	
+</body>
+</html>
